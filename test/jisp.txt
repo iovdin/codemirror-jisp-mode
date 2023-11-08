@@ -1,0 +1,90 @@
+# Number
+
+0
+
+==>
+
+Program(Atom)
+
+# Empty list
+
+()
+
+==> 
+
+Program(List)
+
+# Atom
+
+idenA_"
+
+==>
+
+Program(Atom)
+
+# String "
+
+"String"
+
+==>
+
+Program(String)
+
+# String '
+
+'String'
+
+==>
+
+Program(String)
+
+# RegExp
+
+/asdf/gmi
+
+==>
+
+Program(RegExp)
+
+# List with an Atom
+
+(a)
+
+==>
+
+Program(List(Atom))
+
+# List with few elements
+
+(a 1 b
+  (sublist 1 "a"))
+
+==>
+
+Program(List(Atom, Atom, Atom, List(Atom, Atom, String)))
+
+# Line Comment
+
+; a comment (hello world)
+
+a
+==>
+
+Program(LineComment, Atom)
+
+# Test div-"abc", a[b].c["d"].e
+
+div-"abc" 
+
+a[b].c["d"].e
+==>
+
+Program(Atom, Atom)
+
+# Quote Unquote Spread
+
+(list ,a ...b)
+
+==>
+
+Program(List(Atom, Atom, Atom))
